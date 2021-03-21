@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-# helloworld
-=======
-# Proyek
->>>>>>> ba88a17c3f4916cf69302f7e5d7e00aba3aef6e7
-
-A new Flutter project.
-
 ## Getting Started
 
 This project is a starting point for a Flutter application.
