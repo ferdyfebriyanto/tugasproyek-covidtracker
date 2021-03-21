@@ -1,4 +1,4 @@
-package com.example.covid_imk
+package com.example.helloworld
 
 import io.flutter.embedding.android.FlutterActivity
 
