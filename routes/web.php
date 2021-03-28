@@ -28,3 +28,7 @@ Route::get('/login_web', [LoginController::class, 'index']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/admin', function () {
+    return view ('admin.dashboard');
+});
