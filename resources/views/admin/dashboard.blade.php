@@ -18,7 +18,7 @@
   <link href="assets/admin/dashboard.rtl.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/admin/dashboard.css">
 
-  <style>
+  <!-- <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
@@ -32,7 +32,7 @@
         font-size: 3.5rem;
       }
     }
-  </style>
+  </style> -->
 
 
   <!-- Custom styles for this template -->
@@ -154,8 +154,8 @@
         <div class="row">
           <div class="card"></div>
         </div>
-        
-        <h2>Section title</h2>
+        <&nbsp><&nbsp><&nbsp><&nbsp><&nbsp><&nbsp>
+        <h2>Section title</h2><br>
         <div class="table-responsive">
           <table class="table table-striped table-sm">
             <thead>
