@@ -61,7 +61,7 @@
                                <li><a href="action.html">Gejala</a></li>
                                <li><a href="news.html">Maps</a></li>
                                <li><a href="index.html" class="logo_midle">Pencegahan</a></li>
-                               <li><a class="{{ ( $active == 'about') ? 'active' : '' }}" href="{{url('about')}}">Tentang</a></li>
+                               <li><a class="{{ ( $active == 'about') ? 'active' : '' }}" href="{{url('about')}}">About</a></li>
                                <li><a class="{{ ( $active == 'contact') ? 'active' : '' }}" href="{{url('contact')}}">Contact </a></li>
                                <li><a class="{{ ( $active == 'login') ? 'active' : '' }}" href="{{url('login_web')}}">Login</a></li>
                            </ul>
