@@ -25,10 +25,7 @@ Route::get('/', function () {
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
 Route::get('/login_web', [LoginController::class, 'index']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/admin', function () {
-    return view ('admin.dashboard');
-});
