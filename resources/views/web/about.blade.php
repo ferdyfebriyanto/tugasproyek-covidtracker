@@ -18,7 +18,7 @@
                </div>
                <div class="col-md-5">
                   <div class="about_img text_align_center">
-                     <figure><img src="{{url('web/images/about.png')}}" alt="#"/></figure>
+                     <figure><img src="{{url('web/images/covid1.jpeg')}}" alt="#"/></figure>
                   </div>
                </div>
               
