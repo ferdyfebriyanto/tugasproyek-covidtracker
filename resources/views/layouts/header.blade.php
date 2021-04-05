@@ -57,13 +57,14 @@
                         <nav class="site-navbar">
                            <ul>
                               @php $active = Session::get('active'); @endphp
-                               <li><a class="" href="{{url('/')}}">Home</a></li>
+                              <li><a class="" href="{{url('/')}}">Home</a></li>
                                <li><a href="action.html">Gejala</a></li>
                                <li><a href="news.html">Maps</a></li>
-                               <li><a href="index.html" class="logo_midle">Pencegahan</a></li>
-                               <li><a class="{{ ( $active == 'about') ? 'active' : '' }}" href="{{url('about')}}">About</a></li>
-                               <li><a class="{{ ( $active == 'contact') ? 'active' : '' }}" href="{{url('contact')}}">Contact </a></li>
-                               <li><a class="{{ ( $active == 'login') ? 'active' : '' }}" href="{{url('login_web')}}">Login</a></li>
+                               <li><a href="/" class="logo_midle" style="margin-left:55px; text-align:center">Covid Tracker</a></li>
+                               <li><a class="" href="{{url('pencegahan')}}">Pencegahan</a></li>
+                               <li><a class="" href="{{url('about')}}">Tentang</a></li>
+                               <li><a class="" href="{{url('contact')}}">Contact </a></li>
+                               <!-- <li><a class="" href="{{url('login_web')}}">Login</a></li> -->
                            </ul>
                            <button class="nav-toggler">
                            <span></span>
