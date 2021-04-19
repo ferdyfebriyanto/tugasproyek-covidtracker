@@ -30,14 +30,16 @@
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Users Table</h3>
+               
             </div>
             <!-- /.card-header -->
             <div class="card-body">
+            <a class="btn btn-info"href="{{route('admin.users.create')}}">Create User</a>
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
-                        <tr>
-                            <th style="width: 1px">#</th>
-                            <th style="width: 200px;">Name</th>
+                    <tr>
+                        <th>#</th>
+                            <th >Name</th>
                             <th>Gender</th>
                             <th>Birth</th>
                             <th>Address</th>
@@ -47,16 +49,35 @@
                         </tr>
                     </thead>
                     <tbody>
+                    @php $no =1 @endphp
+                    @foreach($data as $user)
                         <tr>
-                            <td>1</td>
-                            <td>Ferdy</td>
-                            <td>Laki-laki</td>
-                            <td>15/02/2001</td>
-                            <td>Malang</td>
-                            <td>085956468359</td>
-                            <td>Yes</td>
-                            <td></td>
+                            <td>{{$no}}</td>
+                            <td>{{$user->name}}</td>
+                            <td>{{$user->gender}}</td>
+                            <td>{{$user->birth}}</td>
+                            <td>{{$user->address}}</td>
+                            <td>{{$user->phone}}</td>
+                            <td>
+                            @if($user->admin=='y')
+                            Yes
+                            @else
+                            No
+                            @endif
+                            </td>
+                            <td>
+                            <form action="{{route('admin.users.destroy',['user'=>$user->id])}}"method="POST">
+
+                            <a class="btn btn-info"href="{{route('admin.users.show',['user'=>$user->id])}}">Show</a>
+
+                            <a class="btn btn-primary"href="{{route('admin.users.edit',['user'=>$user->id])}}">Edit</a>
+                            @csrf
+                            @method('DELETE')
+                            <button onclick="return confirm('Apakah anda yakin ingin menghapus data?')" type="submit"class="btn btn-danger">Delete</button>
+                             </td>
                         </tr>
+                    @php $no++ @endphp
+                    @endforeach
                     </tbody>
                 </table>
             </div>

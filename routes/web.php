@@ -32,7 +32,7 @@ Route::get('/about', [AboutController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
 Route::get('/login_web', [LoginController::class, 'index']);
 Route::get('/pencegahan', [PencegahanController::class, 'index']);
-Route::get('/news', [NewsController::class, 'index']);
+//Route::get('/news', [NewsController::class, 'index']);
 Route::get('/gejala', [GejalaController::class, 'index']);
 
 

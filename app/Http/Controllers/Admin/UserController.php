@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\User;
 class UserController extends Controller
 {
     /**
@@ -13,8 +13,10 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view ('admin.users');
+    { 
+        $data = User::all();
+        return view('admin.users',compact('data'));
+       
     }
 
     /**
@@ -24,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.user-create');
     }
 
     /**
@@ -35,7 +37,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new User;
+        $data->username = $request->username;
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->password = bcrypt($request->password);
+        $data->gender = $request->gender;
+        $data->birth = $request->birth;
+        $data->phone = $request->phone;
+        $data->admin = $request->admin;
+        $data->address = $request->address;
+        $data->save();
+        return redirect ('admin/users');
     }
 
     /**
@@ -46,7 +59,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = User::find($id);
+        return view('admin.user-show',compact('data'));
     }
 
     /**
@@ -57,7 +71,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = User::find($id);
+        return view('admin.user-edit',compact('data'));
     }
 
     /**
@@ -69,7 +84,18 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = User::find($id);
+        $data->username = $request->username;
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->password = bcrypt($request->password);
+        $data->gender = $request->gender;
+        $data->birth = $request->birth;
+        $data->phone = $request->phone;
+        $data->admin = $request->admin;
+        $data->address = $request->address;
+        $data->save();
+        return redirect ('admin/users');
     }
 
     /**
@@ -80,6 +106,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        
+        User::where('id',$id)->delete();
+        return redirect ('admin/users');
     }
 }
