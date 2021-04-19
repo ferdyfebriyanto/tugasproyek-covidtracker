@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\News;
 
 class NewController extends Controller
 {
@@ -14,7 +15,8 @@ class NewController extends Controller
      */
     public function index()
     {
-        return view('admin.news');
+        $news = News::all();
+        return view('admin.news', ['news' => $news]);
     }
 
     /**
@@ -24,7 +26,7 @@ class NewController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.news-create');
     }
 
     /**
@@ -35,7 +37,21 @@ class NewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $image_name = "";
+        if ($request->file('image')) {
+            $image_name = $request->file('image')->store('images', 'public');
+        }
+
+        News::create([
+            'gambar' => $image_name,
+            'judul' => $request->judul,
+            'konten' => $request->konten,
+            'kategori' => $request->kategori,
+            'penulis' => $request->penulis,
+        ]);
+
+        return redirect()->route('admin.news')
+            ->with('success', 'Berita Berhasil Ditambahkan');
     }
 
     /**
@@ -57,7 +73,9 @@ class NewController extends Controller
      */
     public function edit($id)
     {
-        //
+        $news = News::find($id);
+
+        return view('admin.news-edit', ['news' => $news]);
     }
 
     /**
