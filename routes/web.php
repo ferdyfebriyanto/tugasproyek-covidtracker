@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PencegahanController;
 use App\Http\Controllers\GejalaController;
+use App\Http\Controllers\NewsController;
 use Admin\UserController;
 use Admin\DashboardController;
 use Admin\NewController;

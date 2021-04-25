@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\News;
+use Illuminate\Support\Facades\Storage;
 
 class NewController extends Controller
 {
@@ -16,7 +17,8 @@ class NewController extends Controller
     public function index()
     {
         $news = News::all();
-        return view('admin.news', ['news' => $news]);
+        $paginate = News::orderBy('id', 'desc')->paginate(2);
+        return view('admin.news', ['news' => $news, 'paginate' => $paginate]);
     }
 
     /**
@@ -50,7 +52,7 @@ class NewController extends Controller
             'penulis' => $request->penulis,
         ]);
 
-        return redirect()->route('admin.news')
+        return redirect()->route('admin.news.index')
             ->with('success', 'Berita Berhasil Ditambahkan');
     }
 
@@ -87,7 +89,23 @@ class NewController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $news = News::find($id);
+
+        $news->judul = $request->judul;
+        $news->konten = $request->konten;
+        $news->kategori = $request->kategori;
+        $news->penulis = $request->penulis;
+        $news->updated_at = $request->updated_at;
+
+        if ($news->gambar && file_exists(storage_path('app/public/' . $news->gambar))) {
+            Storage::delete('public/' . $news->gambar);
+        }
+        $image_name = $request->file('image')->store('images', 'public');
+        $news->gambar = $image_name;
+
+        $news->save();
+        return redirect()->route('admin.news')
+            ->with('success', 'Berita Berhasil Diupdate');
     }
 
     /**
@@ -98,6 +116,8 @@ class NewController extends Controller
      */
     public function destroy($id)
     {
-        //
+        News::find($id)->delete();
+        return redirect()->route('admin.news.index')
+            ->with('danger', 'Berita Berhasil Dihapus');
     }
 }
