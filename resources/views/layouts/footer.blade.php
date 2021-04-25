@@ -13,7 +13,7 @@
                                  <li><a href="news.html">Maps</a></li>
                                 <li><a href="about.html">Tentang</a></li>
                                  <li><a href="contact.html">Contact </a></li>
-                                  <li><a href="contact.html">Login</a></li>
+                                 <!-- <li><a href="contact.html">Login</a></li> -->
                               </ul>
                              
            
@@ -33,10 +33,10 @@
                               <h3>Contact  Us</h3>
                                 <ul class="top_infomation">
                         <li><i class="fa fa-map-marker" aria-hidden="true"></i>
-                           Malang , Jawa imur  
+                           Malang , Jawa Timur  
                         </li>
                         <li><i class="fa fa-phone" aria-hidden="true"></i>
-                           Satga Covid : 556678
+                           Satgas Covid : 0341-751550
                         </li>
                         <li><i class="fa fa-envelope" aria-hidden="true"></i>
                            <a href="Javascript:void(0)">Email Satgas: satgas.cvd@gmail.com</a>
@@ -50,7 +50,7 @@
                            <div class="hedingh3 text_align_left">
                               <h3>Negara</h3>
                               <div class="map">
-                                <img src="{{url('web/images/map.png')}}" alt="#"/>
+                                <img src="{{url('web/images/peta.png')}}" alt="#"/>
                               </div>
                            </div>
                         </div>
@@ -61,7 +61,7 @@
                <div class="container">
                   <div class="row">
                      <div class="col-md-8 offset-md-2">
-                        <p>© {{date('Y')}} All Rights Reserved. Design by <a href="https://html.design/"> Kelompok</a></p>
+                        <p>© {{date('Y')}} All Rights Reserved. Design by <a href="https://html.design/"> Kelompok 3</a></p>
                      </div>
                   </div>
                </div>

@@ -21,9 +21,9 @@
                            <div class="row">
                               <div class="col-md-8">
                                  <div class="photog">
-                                    <h1>Care early<br>Coronavirus</h1>
+                                    <h1>Care early<br>Coronavirus</h1> 
                                     <a class="read_more" href="javascript:void(0)" >Read More</a>
-                                    <a class="read_more" href="about.html" >About Us</a>
+                                    <a class="read_more" href="/about" >About Us</a>
                                  </div>
                               </div>
                            </div>
@@ -39,7 +39,7 @@
                                 <div class="photog">
                                     <h1>Care early<br>Coronavirus</h1>
                                     <a class="read_more" href="javascript:void(0)" >Read More</a>
-                                    <a class="read_more" href="about.html" >About Us</a>
+                                    <a class="read_more" href="/about" >About Us</a>
                                  </div>
                               </div>
                            </div>
@@ -53,9 +53,9 @@
                            <div class="row">
                               <div class="col-md-8">
                                 <div class="photog">
-                                    <h1>Care early<br>Coronavirus</h1>
+                                    <h1>Care early<br>Coronavirus</h1> 
                                     <a class="read_more" href="javascript:void(0)" >Read More</a>
-                                    <a class="read_more" href="about.html" >About Us</a>
+                                    <a class="read_more" href="/about" >About Us</a>
                                  </div>
                               </div>
                            </div>
