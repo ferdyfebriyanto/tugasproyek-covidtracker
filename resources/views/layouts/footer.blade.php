@@ -22,7 +22,7 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                            <div class="hedingh3 text_align_left">
                              <h3>Tentang</h3>
-                              <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various</p>
+                              <p>Penyakit virus corona (COVID-19) adalah penyakit menular yang disebabkan oleh virus corona yang baru-baru ini ditemukan. Sebagian besar orang yang tertular COVID-19 akan mengalami gejala ringan hingga sedang, dan akan pulih tanpa penanganan khusus.</p>
                            </div>
                         </div>
                      

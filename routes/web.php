@@ -25,10 +25,11 @@ Route::get('/', function () {
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
 Route::get('/login_web', [LoginController::class, 'index']);
+Route::get('/pencegahan', [PencegahanController::class, 'index']);
+Route::get('/news', [NewsController::class, 'index']);
+Route::get('/gejala', [GejalaController::class, 'index']);
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/admin', function () {
-    return view ('admin.dashboard');
-});

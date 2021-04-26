@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Session;
+use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     /**
@@ -23,7 +24,9 @@ class LoginController extends Controller
      */
     public function index()
     {
-        Session::put('active','login');
-        return view('web.login');
+        // Session::put('active','login');
+        // return view('web.login');
+        $user = Auth::user();
+        return view('home',['user' =>$user]);
     }
 }
