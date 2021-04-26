@@ -58,11 +58,21 @@
                            <ul>
                               @php $active = Session::get('active'); @endphp
                               <li><a class="" href="{{url('/')}}">Home</a></li>
+<<<<<<< HEAD
                                <li><a href="action.html">Gejala</a></li>
                                <li><a href="news.html">Maps</a></li>
                                <li><a href="/" class="logo_midle" style="margin-left:55px; text-align:center">Covid Tracker</a></li>
                                <li><a class="" href="{{url('pencegahan')}}">Pencegahan</a></li>
                                <li><a class="" href="{{url('about')}}">Tentang</a></li>
+=======
+                              <li><a class="" href="{{url('gejala')}}">Gejala</a></li>
+                               <li><a class="" href="{{url('doctor')}}">Doctor</a></li>
+                               
+                               <li><a href="/" class="logo_midle" style="margin-left:45px; text-align:center">Covid Tracker</a></li>
+
+                               <li><a class="" href="{{url('pencegahan')}}">Pencegahan</a></li>
+                               <li><a class="" href="{{url('news')}}">News</a></li>
+>>>>>>> 43b6dcd22a147ec3268950d8803c1fd0aefb8fab
                                <li><a class="" href="{{url('contact')}}">Contact </a></li>
                                <!-- <li><a class="" href="{{url('login_web')}}">Login</a></li> -->
                            </ul>

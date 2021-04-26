@@ -488,7 +488,7 @@ button {
 /** banner section **/
 
 .full_bg {
-     background: url(../images/banner.png);
+     background: url(../images/banner.jpeg);
      background-size: cover;
      background-position: center;
      background-repeat: no-repeat;
@@ -1076,7 +1076,11 @@ padding: 80px 0;
 
 .footer {
     padding-top: 80px;
+<<<<<<< HEAD
     background: #9fcbe6;
+=======
+    background: #021d46;
+>>>>>>> 43b6dcd22a147ec3268950d8803c1fd0aefb8fab
     text-align: center;
 }
 
@@ -1103,7 +1107,7 @@ ul.menu_footer {
 }
 
 ul.menu_footer li a {
-    color: #979793;
+    color: #fff;
     font-size: 17px;
     line-height: 18px;
     padding-bottom: 10px;
