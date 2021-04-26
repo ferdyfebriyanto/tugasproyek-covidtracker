@@ -61,7 +61,7 @@
                <div class="container">
                   <div class="row">
                      <div class="col-md-8 offset-md-2">
-                        <p>© {{date('Y')}} All Rights Reserved. Design by <a href="https://html.design/"> Kelompok</a></p>
+                        <p>© {{date('Y')}} All Rights Reserved. Design by <a href="https://html.design/"> Kelompok 3</a></p>
                      </div>
                   </div>
                </div>

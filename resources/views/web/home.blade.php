@@ -23,7 +23,11 @@
                                  <div class="photog">
                                     <h1>Care early<br>Coronavirus</h1> 
                                     <a class="read_more" href="javascript:void(0)" >Read More</a>
+<<<<<<< HEAD
                                     <a class="read_more" href="/about" >About</a>
+=======
+                                    <a class="read_more" href="/about" >About Us</a>
+>>>>>>> refs/remotes/origin/master
                                  </div>
                               </div>
                            </div>
@@ -39,7 +43,11 @@
                                 <div class="photog">
                                     <h1>Care early<br>Coronavirus</h1>
                                     <a class="read_more" href="javascript:void(0)" >Read More</a>
+<<<<<<< HEAD
                                     <a class="read_more" href="/about" >About</a>
+=======
+                                    <a class="read_more" href="/about" >About Us</a>
+>>>>>>> refs/remotes/origin/master
                                  </div>
                               </div>
                            </div>
@@ -55,7 +63,11 @@
                                 <div class="photog">
                                     <h1>Care early<br>Coronavirus</h1> 
                                     <a class="read_more" href="javascript:void(0)" >Read More</a>
+<<<<<<< HEAD
                                     <a class="read_more" href="/about" >About</a>
+=======
+                                    <a class="read_more" href="/about" >About Us</a>
+>>>>>>> refs/remotes/origin/master
                                  </div>
                               </div>
                            </div>
