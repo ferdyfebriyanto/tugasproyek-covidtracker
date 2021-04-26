@@ -94,7 +94,7 @@
     </div>
     @yield('footer')
     <footer>
-                    <p>All right reserved. <a href="http://webthemez.com">Kelompok 3</a></p>
+                    <p>All right reserved. Kelompok 3</p>
                 </footer>
             </div>
             <!-- /. PAGE INNER  -->
