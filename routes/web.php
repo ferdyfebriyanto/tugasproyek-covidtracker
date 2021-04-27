@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PencegahanController;
 use App\Http\Controllers\GejalaController;
+use App\Http\Controllers\UserController as user_dev;
 use Admin\UserController;
 use Admin\DashboardController;
 use Admin\NewController;
@@ -54,11 +55,12 @@ Auth::routes();
 // Route::get('/dashboard', function () {
 //     return view('admin.dashboard');
 // });
-
+Route::get('users/delete/{id}',[user_dev::class,'delete']);
 // Admin Routes
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('/dashboard', DashboardController::class);
     Route::resource('/users', UserController::class);
+    
     Route::resource('/news', NewController::class);
     Route::resource('/category', CategoryController::class);
 });

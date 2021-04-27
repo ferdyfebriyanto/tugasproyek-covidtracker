@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="{{ asset ('assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
 <!-- Theme style -->
 <link rel="stylesheet" href="{{ asset ('assets/dist/css/adminlte.min.css')}}">
-
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
 
 <style>
     body {
@@ -35,7 +35,7 @@
             <!-- /.card-header -->
             <div class="card-body">
             <a class="btn btn-info"href="{{route('admin.users.create')}}">Create User</a>
-                <table id="example1" class="table table-bordered table-striped">
+                <table  id="users" class="table table-bordered table-striped">
                     <thead>
                     <tr>
                         <th>#</th>
@@ -68,12 +68,17 @@
                             <td>
                             <form action="{{route('admin.users.destroy',['user'=>$user->id])}}"method="POST">
 
-                            <a class="btn btn-info"href="{{route('admin.users.show',['user'=>$user->id])}}">Show</a>
-
-                            <a class="btn btn-primary"href="{{route('admin.users.edit',['user'=>$user->id])}}">Edit</a>
+                            <a title="show user" href="{{route('admin.users.show',['user'=>$user->id])}}"><i class="fa fa-user">
+                            </i></a>
+                            &nbsp;
+                            <a title="edit user" href="{{route('admin.users.edit',['user'=>$user->id])}}"><i class="fa fa-edit">
+                            </i></a>
                             @csrf
                             @method('DELETE')
-                            <button onclick="return confirm('Apakah anda yakin ingin menghapus data?')" type="submit"class="btn btn-danger">Delete</button>
+                            &nbsp;
+
+                            <a title="delete user" onclick="return confirm('Apakah anda yakin ingin menghapus data?')" href="{{url('users/delete/'.$user->id)}}"><i class="fa fa-trash">
+                            </i></a>
                              </td>
                         </tr>
                     @php $no++ @endphp
@@ -92,11 +97,11 @@
 
 @push('custom-js')
 <!-- jQuery -->
-<script src="{{ asset ('assets/plugins/jquery/jquery.min.js')}}"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset ('assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- DataTables  & Plugins -->
-<script src="{{ asset ('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<!-- <script src="{{ asset ('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
 <script src="{{ asset ('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
 <script src="{{ asset ('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
 <script src="{{ asset ('assets/plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
@@ -106,27 +111,18 @@
 <script src="{{ asset ('assets/plugins/pdfmake/vfs_fonts.js')}}"></script>
 <script src="{{ asset ('assets/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
 <script src="{{ asset ('assets/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
-<script src="{{ asset ('assets/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+<script src="{{ asset ('assets/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script> -->
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset ('assets/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset ('assets/dist/js/demo.js')}}"></script>
 <!-- Page specific script -->
 <script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
+
+
+  $(document).ready(function() {
+    $('#users').DataTable();
+} );
 </script>
 @endpush
