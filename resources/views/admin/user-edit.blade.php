@@ -14,9 +14,9 @@
 
 
 <style>
-    body {
-        font-family: "Nunito";
-    }
+  body {
+    font-family: "Nunito";
+  }
 </style>
 @endpush
 
@@ -24,86 +24,86 @@
 @section('sub-page', 'Edit')
 
 @section('content')
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <!-- left column -->
-          <div class="col-md-12">
-            <!-- jquery validation -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Create User</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form id="quickForm" action="{{route('admin.users.update',['user'=>$data->id])}}" method="POST">
-
-              @csrf
-              @method('PUT')
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Email User</label>
-                    <input type="email" value="{{$data->email}}" required name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Name</label>
-                    <input type="text"required value="{{$data->name}}" name="name" class="form-control" id="exampleInputPassword1" placeholder="Enter Name">
-                  </div>    
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Phone</label>
-                    <input type="text" required value="{{$data->phone}}" name="phone" class="form-control" id="exampleInputPassword1" placeholder="Enter Phone">
-                  </div>    
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Birth Date</label>
-                    <input type="date"required value="{{$data->birth}}"  name="birth" class="form-control" id="exampleInputPassword1">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Address</label>
-                    <textarea class="form-control" name="address" placeholder="Address user... ">
-                    {{$data->address}}
-                    </textarea>
-                  </div>
-                  <div class="form-group"><label for="exampleInputPassword1">Gender</label>
-
-                   <select class="form-control" name="gender">
-                   <option value="">Pilih gender</option>
-
-                    <option value="Laki-laki" {{ ( $data->gender == 'Laki-laki') ? 'selected' : '' }}>Laki-laki</option>
-                    <option value="Perempuan" {{ ( $data->gender == 'Perempuan') ? 'selected' : '' }}>Perempuan</option>
-                   </select>
-                  </div>
-                  <div class="form-group"><label for="exampleInputPassword1">Admin or User</label>
-
-                   <select class="form-control" name="admin">
-                   <option value="">Adminuser ?</option>
-                    <option value="y"{{ ( $data->admin == 'y') ? 'selected' : '' }} >Yes</option>
-                    <option value="n" {{ ( $data->admin == 'n') ? 'selected' : '' }}>No</option>
-                   </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" required name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                  </div>
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-              </form>
-            </div>
-            <!-- /.card -->
-            </div>
-          <!--/.col (left) -->
-          <!-- right column -->
-          <div class="col-md-6">
-
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-12">
+        <!-- jquery validation -->
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">Create User</h3>
           </div>
-          <!--/.col (right) -->
+          <!-- /.card-header -->
+          <!-- form start -->
+          <form id="quickForm" action="{{route('admin.users.update',['user'=>$data->id])}}" method="POST">
+
+            @csrf
+            @method('PUT')
+            <div class="card-body">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email User</label>
+                <input type="email" value="{{$data->email}}" required name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Name</label>
+                <input type="text" required value="{{$data->name}}" name="name" class="form-control" id="exampleInputPassword1" placeholder="Enter Name">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Phone</label>
+                <input type="text" required value="{{$data->phone}}" name="phone" class="form-control" id="exampleInputPassword1" placeholder="Enter Phone">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Birth Date</label>
+                <input type="date" required value="{{$data->birth}}" name="birth" class="form-control" id="exampleInputPassword1">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Address</label>
+                <textarea class="form-control" name="address" placeholder="Address user... ">
+                {{$data->address}}
+                </textarea>
+              </div>
+              <div class="form-group"><label for="exampleInputPassword1">Gender</label>
+
+                <select class="form-control" name="gender">
+                  <option value="">Pilih gender</option>
+
+                  <option value="Laki-laki" {{ ( $data->gender == 'Laki-laki') ? 'selected' : '' }}>Laki-laki</option>
+                  <option value="Perempuan" {{ ( $data->gender == 'Perempuan') ? 'selected' : '' }}>Perempuan</option>
+                </select>
+              </div>
+              <div class="form-group"><label for="exampleInputPassword1">Admin or User</label>
+
+                <select class="form-control" name="admin">
+                  <option value="">Adminuser ?</option>
+                  <option value="y" {{ ( $data->admin == 'y') ? 'selected' : '' }}>Yes</option>
+                  <option value="n" {{ ( $data->admin == 'n') ? 'selected' : '' }}>No</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" required name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
         </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </section>
+        <!-- /.card -->
+      </div>
+      <!--/.col (left) -->
+      <!-- right column -->
+      <div class="col-md-6">
+
+      </div>
+      <!--/.col (right) -->
+    </div>
+    <!-- /.row -->
+  </div><!-- /.container-fluid -->
+</section>
 @endsection
 
 
@@ -130,9 +130,11 @@
 <script src="{{ asset ('assets/dist/js/demo.js')}}"></script>
 <!-- Page specific script -->
 <script>
-  $(function () {
+  $(function() {
     $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({

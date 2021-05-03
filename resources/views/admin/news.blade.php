@@ -32,7 +32,7 @@
                 <h3 class="card-title">Tabel Berita</h3>
             </div>
             <div class="float-right my-2" style="margin-left: 20px;">
-                <a class="btn btn-success" href="{{ route('admin.news.create')}}">Input Mahasiswa</a>
+                <a class="btn btn-success" href="{{ route('admin.news.create')}}">Input News</a>
             </div>
             <div style="margin-left: 20px;">
                 <form class="input-group" action="{{ route('admin.news.index')}}" method="get">
