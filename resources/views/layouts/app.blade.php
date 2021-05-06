@@ -89,6 +89,7 @@
                     </div>
                 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
             </div>
         </nav>
 
@@ -105,6 +106,9 @@
 =======
             </nav>
 >>>>>>> refs/remotes/origin/master
+=======
+            </nav>
+>>>>>>> 3ff99feba96400da810df44a9990a5474362ae62
         </div>
         <!-- /. NAV-TOP -->
         @yield('content')

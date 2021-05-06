@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PencegahanController;
 use App\Http\Controllers\GejalaController;
+use App\Http\Controllers\UserController as user_dev;
 use App\Http\Controllers\NewsController;
 use Admin\UserController;
 use Admin\DashboardController;
@@ -32,12 +33,9 @@ Route::get('/', function () {
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
 Route::get('/login_web', [LoginController::class, 'index']);
-<<<<<<< HEAD
-=======
 Route::get('/pencegahan', [PencegahanController::class, 'index']);
 //Route::get('/news', [NewsController::class, 'index']);
 Route::get('/gejala', [GejalaController::class, 'index']);
->>>>>>> refs/remotes/origin/master
 
 Route::get('/news', [App\Http\Controllers\NewsController::class, 'index']);
 Route::get('/doctor', [App\Http\Controllers\DoctorController::class, 'index']);
@@ -63,11 +61,12 @@ Auth::routes();
 // Route::get('/dashboard', function () {
 //     return view('admin.dashboard');
 // });
-
+Route::get('users/delete/{id}',[user_dev::class,'delete']);
 // Admin Routes
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('/dashboard', DashboardController::class);
     Route::resource('/users', UserController::class);
+    
     Route::resource('/news', NewController::class);
     Route::resource('/category', CategoryController::class);
 });
