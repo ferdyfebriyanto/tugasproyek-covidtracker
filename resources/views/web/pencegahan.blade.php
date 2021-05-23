@@ -120,7 +120,8 @@
                </div>
             </div>
           </div>
-      </div><a class="read_more" href="/protect">Read More</a>
+      </div>
+      <a class="read_more" href="/protect">Read More</a>
          </div>
       </div>
       <!-- end protect -->
