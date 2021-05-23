@@ -52,7 +52,7 @@ class NewController extends Controller
             'penulis' => $request->penulis,
         ]);
 
-        return redirect()->route('admin.news')
+        return redirect()->route('admin.news.index')
             ->with('success', 'Berita Berhasil Ditambahkan');
     }
 
@@ -62,9 +62,9 @@ class NewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(News $news)
+    public function show($id)
     {
-        return view('news.news-show', compact('$news'));
+        //
     }
 
     /**
@@ -104,7 +104,7 @@ class NewController extends Controller
         $news->gambar = $image_name;
 
         $news->save();
-        return redirect()->route('admin.news.index')
+        return redirect()->route('admin.news')
             ->with('success', 'Berita Berhasil Diupdate');
     }
 

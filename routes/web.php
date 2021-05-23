@@ -35,6 +35,11 @@ Route::get('/pencegahan', [PencegahanController::class, 'index']);
 //Route::get('/news', [NewsController::class, 'index']);
 Route::get('/gejala', [GejalaController::class, 'index']);
 
+Route::get('/news', [App\Http\Controllers\NewsController::class, 'index']);
+Route::get('/doctor', [App\Http\Controllers\DoctorController::class, 'index']);
+Route::get('/pencegahan', [App\Http\Controllers\PencegahanController::class, 'index']);
+Route::get('/gejala', [App\Http\Controllers\GejalaController::class, 'index']);
+Route::get('/protect', [App\Http\Controllers\PencegahanController::class, 'protect']);
 
 Auth::routes();
 
