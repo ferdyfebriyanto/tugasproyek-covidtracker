@@ -343,6 +343,9 @@
          </div>
     </div>
     <!-- end doctors -->
+   <!-- update -->
+<div class="update">
+   <div class="cevery_white">
       <div class="container">
          <div class="row">
             <div class="col-md-12">
@@ -353,6 +356,19 @@
          </div>
       </div>
    </div>
-   <!-- end cases -->
+   <div class="cevery_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <form id="colof" class="form_subscri">
+                  <input class="newsl" placeholder="Your Email" type="text" name="Email">
+                  <button class="subsci_btn">Subscribe Now</button>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+   <!-- end contact -->
    @endsection
    
