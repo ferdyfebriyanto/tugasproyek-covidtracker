@@ -252,6 +252,68 @@
          </div>
       </div>
       <!-- end protect -->
+      <div class="protect">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage text_align_center">
+                  <br></br>
+                     <h2>Total kasus virus covid di Indonesia</h2>
+                     <h3>Total positif, total sembuh, total meninggal</h3>
+                  </div>
+               </div>
+            </div>
+         </div>
+           <div class="protect_bg">
+         <div class="container">
+             <div class="row">
+               <div class="col-md-12">
+                  <!--  Demos -->
+                  <div class="owl-carousel owl-theme">
+                     <div class="item">
+                        <div class="protect_box text_align_center">
+                          <div class="desktop">
+                        
+                           <h3> Total Positif</h3>
+                           <h2>{{$global[0]['positif']}} Jiwa</h2>
+                          </div>
+                        </div>
+                     </div>
+                     <div class="item">
+                          <div class="protect_box text_align_center">
+                          <div class="desktop">
+                            
+                             <h3> Total Meninggal</h3>
+                           <h2>{{$global[0]['meninggal']}} Jiwa</h2>
+                          </div>
+                        </div>
+                     </div>
+                     <div class="item">
+                          <div class="protect_box text_align_center">
+                          <div class="desktop">
+                             
+                             <h3> Total Sembuh</h3>
+                           <h2>{{$global[0]['sembuh']}} Jiwa </h2>
+                          </div>          
+                        </div>
+                     </div>
+                     <div class="item">
+                          <div class="protect_box text_align_center">
+                          <div class="desktop">
+                          <h3> Total Dirawat</h3>
+                           <h2>{{$global[0]['dirawat']}} Jiwa</h2>
+                          </div>                          
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+          </div>
+      </div>
+      <a class="read_more" href="/protect">Read More</a>
+         </div>
+      </div>
+      <!-- end protect -->
    <!-- cases -->
       <div class="cases">
          <div class="container-fluid">

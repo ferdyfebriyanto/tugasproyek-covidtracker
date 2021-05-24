@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use GuzzleHttp\Client;
 class HomeController extends Controller
 {
     /**
@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -23,6 +23,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('web.home');
+        $global = $this->getGlobalDataCovidId();
+        return view('web.home',compact('global'));
+    }
+
+    public function getGlobalDataCovidId()
+    {
+        $client = new Client(['base_uri' => 'https://reqres.in/']);
+        $response = $client->request('POST', 'https://api.kawalcorona.com/indonesia');
+        $data = $response->getBody();
+        $arrData = json_decode($data,true);
+        return $arrData; //$arrData[0]['name'];
     }
 }
