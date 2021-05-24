@@ -1,7 +1,6 @@
 @extends('layouts.master')
 @section('title', 'Create News')
 @push('custom-css')
-
 @endpush
 
 @section('title-page', 'Create News')

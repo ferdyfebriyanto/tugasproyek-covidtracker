@@ -11,10 +11,4 @@ class UserController extends Controller
         $data = User::all();
         return view('admin.users',compact('data'));
     }
-    public function delete($id)
-    {
-        User::where('id',$id)->delete();
-        return redirect ('admin/users');
-    }
-
 }

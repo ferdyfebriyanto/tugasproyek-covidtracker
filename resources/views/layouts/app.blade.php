@@ -88,7 +88,27 @@
                         </ul>
                     </div>
                 </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+            </div>
+        </nav>
+
+        <!-- <main class="py-4"> -->
+            @yield('content')
+        <!-- </main> -->
+    </div>
+    @yield('footer')
+    <footer>
+                    <p>All right reserved. Kelompok 3</p>
+                </footer>
+            </div>
+            <!-- /. PAGE INNER  -->
+=======
             </nav>
+>>>>>>> refs/remotes/origin/master
+=======
+            </nav>
+>>>>>>> 3ff99feba96400da810df44a9990a5474362ae62
         </div>
         <!-- /. NAV-TOP -->
         @yield('content')
