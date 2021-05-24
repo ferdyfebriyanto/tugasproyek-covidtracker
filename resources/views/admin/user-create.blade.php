@@ -35,6 +35,7 @@
               <div class="card-header">
                 <h3 class="card-title">Create User</h3>
               </div>
+              
               <!-- /.card-header -->
               <!-- form start -->
               <form id="quickForm" action="{{route('admin.users.store')}}" method="POST">
