@@ -33,8 +33,11 @@
                
             </div>
             <!-- /.card-header -->
-            <div class="card-body">
+            <div class="card-header">
             <a class="btn btn-info"href="{{route('admin.users.create')}}">Create User</a>
+            </div>
+            <div class="card-body">
+            
                 <table  id="users" class="table table-bordered table-striped">
                     <thead>
                     <tr>
