@@ -2,6 +2,7 @@
 @section('stylebody')
  <body class="main-layout">
 @endsection
+@section('title', 'Home')
 @section('content')
             <div class="full_bg">
       <!-- header inner -->
@@ -78,7 +79,7 @@
       <!-- end banner -->
 
       <!-- about -->
-      <div class="about">
+      <!-- <div class="about">
          <div class="container_width">
             <div class="row d_flex">
             <div class="col-md-5">
@@ -99,7 +100,7 @@
             </div>
          </div>
       </div>
-   </div>
+   </div> -->
    <!-- end about -->
    <!-- coronata -->
    <div class="about">
@@ -261,7 +262,7 @@
                      <h2>Total kasus virus covid di Indonesia</h2>
                      <h3>Total positif, total sembuh, total meninggal</h3>
                   </div>
-               </div>
+               </div>   
             </div>
          </div>
            <div class="protect_bg">
