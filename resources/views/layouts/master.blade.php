@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ asset ('assets/plugins/fontawesome-free/css/all.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset ('assets/dist/css/adminlte.min.css')}}">
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
    
 </head>
 
@@ -73,7 +73,14 @@
     <script src="{{ asset ('assets/dist/js/adminlte.min.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset ('assets/dist/js/demo.js')}}"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js">
 
+</script>
+<script>
+$(document).ready(function() {
+    $('#users').DataTable();
+} );
+</script>
     
 </body>
 

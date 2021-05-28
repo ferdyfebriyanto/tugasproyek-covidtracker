@@ -12,6 +12,7 @@
 <!-- Theme style -->
 <link rel="stylesheet" href="{{ asset ('assets/dist/css/adminlte.min.css')}}">
 
+
 <style>
     body {
         font-family: "Nunito";
@@ -45,7 +46,7 @@
                             <th>Address</th>
                             <th>Phone</th>
                             <th>Admin</th>
-                            <th style="width: 100px;">Action</th>
+                            <th style="width: 30px;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,12 +69,13 @@
                             <td>
                             <form action="{{route('admin.users.destroy',['user'=>$user->id])}}"method="POST">
 
-                            <a class="btn btn-info"href="{{route('admin.users.show',['user'=>$user->id])}}">Show</a>
+                            <a class="btn btn-sm btn-info"href="{{route('admin.users.show',['user'=>$user->id])}}">Show</a>
 
-                            <a class="btn btn-primary"href="{{route('admin.users.edit',['user'=>$user->id])}}">Edit</a>
+                            <a class="btn btn-sm btn-primary"href="{{route('admin.users.edit',['user'=>$user->id])}}">Edit</a>
                             @csrf
                             @method('DELETE')
-                            <button onclick="return confirm('Apakah anda yakin ingin menghapus data?')" type="submit"class="btn btn-danger">Delete</button>
+                            <button onclick="return confirm('Apakah anda yakin ingin menghapus data?')" type="submit"
+                            class="btn btn-sm btn-danger">Delete</button>
                              </td>
                         </tr>
                     @php $no++ @endphp
@@ -112,21 +114,5 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset ('assets/dist/js/demo.js')}}"></script>
 <!-- Page specific script -->
-<script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script>
+
 @endpush

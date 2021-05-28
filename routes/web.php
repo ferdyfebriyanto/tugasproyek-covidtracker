@@ -27,6 +27,12 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('covid_global', [HomeController::class, 'getGlobalDataCovidId']); // covid global data
+Route::get(
+    'covid_maps',[HomeController::class,'indexMaps']
+);
+Route::get(
+    'covid_maps_api',[HomeController::class,'getDataProvinsi']
+);
 //Frontend
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
