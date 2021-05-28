@@ -65,7 +65,7 @@
                               <li><a class="" href="{{url('gejala')}}">Gejala</a></li>
                                <li><a class="" href="{{url('doctor')}}">Doctor</a></li>
                                
-                               <li><a href="/" class="logo_midle" style="margin-left:45px; text-align:center">Covid Tracker</a></li>
+                               <li><a href="{{url('covid_maps')}}" class="logo_midle" style="margin-left:45px; text-align:center">Covid Tracker</a></li>
 
                                <li><a class="" href="{{url('pencegahan')}}">Pencegahan</a></li>
                                <li><a class="" href="{{url('news')}}">News</a></li>
