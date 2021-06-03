@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use App\Models\Post;
+use App\Models\News;
 class HomeController extends Controller
 {
     /**
@@ -23,8 +25,15 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // $news = News::All();
         $global = $this->getGlobalDataCovidId();
-        return view('web.home',compact('global'));
+        // return view('web.home',compact('global'));
+        // return view('web.home', ['news' => $news, 'global' => $global]);
+
+        $news = News::all();
+        $paginate = News::orderBy('id', 'desc')->paginate(2);
+        return view('web.home', ['news' => $news, 'paginate' => $paginate, 'global' => $global]);
+      
     }
 
     public function indexMaps()
@@ -69,5 +78,13 @@ class HomeController extends Controller
         return $arrProv;
         //$arrData[0]['attributes']['Kode_Provi'];
         //$arrData; 
+    }
+
+    public function getHomePageNews()
+    {
+        
+        $news = News::All();
+
+        return view ('web.home');
     }
 }

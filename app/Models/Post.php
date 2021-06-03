@@ -7,5 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    use HasFactory;
+    protected $table='posts';
+    protected $primaryKey='id';
+    protected $fillable=[
+        'slug',
+        'title',
+        'description',
+        'image_path',
+        'created_at',
+        'updated_at',
+        'user_id',
+    ];
 }

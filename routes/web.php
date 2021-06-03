@@ -13,6 +13,7 @@ use Admin\UserController;
 use Admin\DashboardController;
 use Admin\NewController;
 use Admin\CategoryController;
+use App\Http\Controllers\Admin\PostController;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('getHomePageNews', [HomeController::class, 'getHomePageNews']);
 Route::get('covid_global', [HomeController::class, 'getGlobalDataCovidId']); // covid global data
 Route::get(
     'covid_maps',[HomeController::class,'indexMaps']
@@ -73,4 +75,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     
     Route::resource('/news', NewController::class);
     Route::resource('/category', CategoryController::class);
+
+    Route::resource('/blog', PostController::class);
 });
+
+

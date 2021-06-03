@@ -19,7 +19,10 @@ class NewController extends Controller
         $news = News::all();
         $paginate = News::orderBy('id', 'desc')->paginate(2);
         return view('admin.news', ['news' => $news, 'paginate' => $paginate]);
+        
     }
+
+  
 
     /**
      * Show the form for creating a new resource.
