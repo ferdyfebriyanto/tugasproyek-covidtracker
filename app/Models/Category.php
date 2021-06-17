@@ -11,8 +11,8 @@ class Category extends Model
     use HasFactory;
     protected $table='category'; //mendefinisikan bahwa model ini terkait dengan tabel category
 
-    public function news()
-    {
-        return $this->hasMany(News::class);
-    }
+    // public function news()
+    // {
+    //     return $this->hasMany(News::class);
+    // }
 }

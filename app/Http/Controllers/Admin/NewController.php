@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\News;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Category;
 
 class NewController extends Controller
 {
@@ -16,10 +17,11 @@ class NewController extends Controller
      */
     public function index()
     {
+        // yang semula News:all, diubah menjadi with() yang menyatakan relasi
+        // $news = News::with('category')->get();
         $news = News::all();
-        $paginate = News::orderBy('id', 'desc')->paginate(2);
+        $paginate = News::orderBy('id', 'asc')->paginate(2);
         return view('admin.news', ['news' => $news, 'paginate' => $paginate]);
-        
     }
 
   
@@ -31,6 +33,8 @@ class NewController extends Controller
      */
     public function create()
     {
+        // $categories = Category::all(); //mendapatkan data dari tabel categories
+        // return view('admin.news-create', ['categories' => $categories]);
         return view('admin.news-create');
     }
 
@@ -55,6 +59,15 @@ class NewController extends Controller
             'penulis' => $request->penulis,
         ]);
 
+        // $news = new News;
+
+        // $categories = new Category;
+        // $categories->id = $request->get('kategori');
+
+        // fungsi eloquent untuk menambah data dengan relasi belongsTo
+        // $news->categories->associate($categories);
+        // $news->save();
+
         return redirect()->route('admin.news.index')
             ->with('success', 'Berita Berhasil Ditambahkan');
     }
@@ -67,7 +80,9 @@ class NewController extends Controller
      */
     public function show($id)
     {
-        //
+        $news = News::find($id);
+        // $news = News::with('categories')->where('id', $id)->first();
+        return view('web.detail', compact('news'));
     }
 
     /**
@@ -78,9 +93,10 @@ class NewController extends Controller
      */
     public function edit($id)
     {
-        $news = News::find($id);
+        $news = News::find($id)->first();
 
         return view('admin.news-edit', ['news' => $news]);
+
     }
 
     /**

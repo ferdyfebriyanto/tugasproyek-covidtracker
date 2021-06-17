@@ -37,7 +37,7 @@
                 <div class="small-box bg-info">
                     <div class="inner">
                         <p>TOTAL POSITIF</p>
-                        <h3>1,552,880</h3>
+                        <h3>{{$global[0]['positif']}} </h3>
                         <p>ORANG</p>
                     </div>
                     <div class="icon">
@@ -52,7 +52,7 @@
                 <div class="small-box bg-success">
                     <div class="inner">
                         <p>TOTAL SEMBUH</p>
-                        <h3>1,399,382</h3>
+                        <h3>{{$global[0]['meninggal']}}</h3>
                         <p>ORANG</p>
                     </div>
                     <div class="icon">
@@ -67,7 +67,7 @@
                 <div class="small-box bg-danger">
                     <div class="inner">
                         <p>TOTAL MENINGGAL</p>
-                        <h3>42,227</h3>
+                        <h3>{{$global[0]['sembuh']}}</h3>
                         <p>ORANG</p>
                     </div>
                     <div class="icon">
@@ -82,7 +82,7 @@
         <!-- Default box -->
         <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Title</h3>
+                        <h3 class="card-title">Titik Sebaran Virus Covid 19</h3>
 
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -94,11 +94,35 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        Start creating your amazing application!
+                    <div class="row">
+                <div class="col-md-12">
+                    <table id="users" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Name Of Province</th>
+                                <th>Kasus Positif</th>
+                                <th>Kasus Sembuh</th>
+                                <th>Kasus Meninggal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for($i=0; $i < count($data); $i++) <tr>
+                                <td>{{$i+1}}</td>
+                                <td>{{$data[$i]['attributes']['Provinsi']}}</td>
+                                <td>{{$data[$i]['attributes']['Kasus_Posi']}}</td>
+                                <td>{{$data[$i]['attributes']['Kasus_Semb']}}</td>
+                                <td>{{$data[$i]['attributes']['Kasus_Meni']}}</td>
+                                </tr>
+                                @endfor
+                        </tbody>
+                    </table>
+                </div>
+            </div>
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        Footer
+                        
                     </div>
                     <!-- /.card-footer-->
                 </div>

@@ -38,6 +38,9 @@
 
                         <label for="kategori">Kategori: </label>
                         <input type="text" class="form-control" required="required" name="kategori"></br>
+
+                        
+
                         <label for="penulis">Penulis: </label>
                         <input type="text" class="form-control" required="required" name="penulis"></br>
                         <label for="gambar">Feature Image: </label>

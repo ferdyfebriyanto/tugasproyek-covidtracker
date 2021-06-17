@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
 
 class DashboardController extends Controller
 {
@@ -14,7 +15,48 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view ('admin.dashboard');
+        
+        $global = $this->getGlobalDataCovidId();
+        $data = $this->getDataProvinsiTable();
+        return view ('admin.dashboard', ['global' => $global, 'data' => $data]);
+    }
+
+    public function getGlobalDataCovidId()
+    {
+        $client = new Client(['base_uri' => 'https://reqres.in/']);
+        $response = $client->request('POST', 'https://api.kawalcorona.com/indonesia');
+        $data = $response->getBody();
+        $arrData = json_decode($data,true);
+        return $arrData; //$arrData[0]['name'];
+    }
+
+    public function getDataProvinsiTable()
+    {
+        $client = new Client(['base_uri' => 'https://reqres.in/']);
+        $response = $client->request('POST', 'https://api.kawalcorona.com/indonesia/provinsi');
+        $data = $response->getBody();
+        $arrData = json_decode($data,true);
+        return $arrData;
+    }
+
+    public function getDataProvinsi()
+    {
+        $client = new Client(['base_uri' => 'https://reqres.in/']);
+        $response = $client->request('POST', 'https://api.kawalcorona.com/indonesia/provinsi');
+        $data = $response->getBody();
+        $arrData = json_decode($data,true);
+        //return $arrData;
+        $arrProv = [];
+        for($i=0; $i<count($arrData); $i++)
+        {
+            $item = [$arrData[$i]['attributes']['Kasus_Posi'],$arrData[$i]['attributes']['Provinsi']
+            ,$arrData[$i]['attributes']['Kasus_Semb']];
+            array_push($arrProv,$item);
+
+        }
+        return $arrProv;
+        //$arrData[0]['attributes']['Kode_Provi'];
+        //$arrData; 
     }
 
     /**

@@ -50,6 +50,7 @@ class HomeController extends Controller
         $arrData = json_decode($data,true);
         return $arrData; //$arrData[0]['name'];
     }
+    
     public function getDataProvinsiTable()
     {
         $client = new Client(['base_uri' => 'https://reqres.in/']);

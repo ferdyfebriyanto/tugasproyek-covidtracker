@@ -8,7 +8,7 @@ use App\Models\Category;
 
 class News extends Model
 {
-    protected $table='news';
+    protected $table='news'; 
     protected $primaryKey='id';
     protected $fillable=[
         'gambar',
@@ -17,4 +17,9 @@ class News extends Model
         'kategori',
         'penulis',
     ];
+
+    // public function category()
+    // {
+    //     return $this->belongsTo(Category::class);
+    // }
 }

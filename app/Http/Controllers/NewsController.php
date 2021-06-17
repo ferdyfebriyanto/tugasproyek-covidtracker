@@ -8,7 +8,7 @@ class NewsController extends Controller
 {
     public function index()
     {   
-        Session::put('active','news');
+        // Session::put('active','news');
         return view('web.news');
     }
 }

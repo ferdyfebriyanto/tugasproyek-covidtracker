@@ -13,11 +13,11 @@ class RelasiCategoriesNewsTable extends Migration
      */
     public function up()
     {
-        Schema::table('news', function (Blueprint $table){
-            $table->dropColumn('kategori'); //menghapus kolom 
-            $table->unsignedBigInteger('kategori_id')->nullable(); //menambah kolom kategori_id
-            $table->foreign('kategori_id')->references('id')->on('categories'); //menambah foreign key di kolom kategori_id
-        });
+        // Schema::table('news', function (Blueprint $table){
+        //     $table->dropColumn('kategori'); //menghapus kolom 
+        //     $table->unsignedBigInteger('kategori_id')->nullable(); //menambah kolom kategori_id
+        //     $table->foreign('kategori_id')->references('id')->on('categories'); //menambah foreign key di kolom kategori_id
+        // });
     }
 
     /**
@@ -27,9 +27,9 @@ class RelasiCategoriesNewsTable extends Migration
      */
     public function down()
     {
-        Schema::table('news', function (Blueprint $table){
-            $table->string('kategori');
-            $table->dropForeign(['kategori_id']);
-        });
+        // Schema::table('news', function (Blueprint $table){
+        //     $table->string('kategori');
+        //     $table->dropForeign(['kategori_id']);
+        // });
     }
 }

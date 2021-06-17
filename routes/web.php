@@ -29,15 +29,15 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('getHomePageNews', [HomeController::class, 'getHomePageNews']);
 Route::get('covid_global', [HomeController::class, 'getGlobalDataCovidId']); // covid global data
-Route::get(
-    'covid_maps',[HomeController::class,'indexMaps']
-);
-Route::get(
-    'covid_maps_api',[HomeController::class,'getDataProvinsi']
-);
+Route::get('covid_maps',[HomeController::class,'indexMaps']);
+Route::get('covid_maps_api',[HomeController::class,'getDataProvinsi']);
+
 //Frontend
 Route::get('/about', [AboutController::class, 'index']);
-Route::get('/contact', [ContactController::class, 'index']);
+
+// Route::get('/contact', [ContactController::class, 'index']);
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contactForm'])->name('contact-form');
+Route::post('/contact', [App\Http\Controllers\ContactController::class, 'storeContactForm'])->name('contact-form.store');
 
 Route::get('/pencegahan', [PencegahanController::class, 'index']);
 //Route::get('/news', [NewsController::class, 'index']);
@@ -48,6 +48,7 @@ Route::get('/doctor', [App\Http\Controllers\DoctorController::class, 'index']);
 Route::get('/pencegahan', [App\Http\Controllers\PencegahanController::class, 'index']);
 Route::get('/gejala', [App\Http\Controllers\GejalaController::class, 'index']);
 Route::get('/protect', [App\Http\Controllers\PencegahanController::class, 'protect']);
+Route::get('/maps', [\App\Http\Controllers\HomeController::class, 'indexMaps']);
 
 Auth::routes();
 
@@ -68,15 +69,21 @@ Auth::routes();
 //     return view('admin.dashboard');
 // });
 Route::get('users/delete/{id}',[user_dev::class,'delete']);
+
+
 // Admin Routes
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::prefix('admin')->name('admin.')->group(function() {
     Route::resource('/dashboard', DashboardController::class);
+    
     Route::resource('/users', UserController::class);
     
     Route::resource('/news', NewController::class);
     Route::resource('/category', CategoryController::class);
 
-    Route::resource('/blog', PostController::class);
+    // Route::resource('/blog', PostController::class);
 });
+
+// ->middleware('is_admin')
+
 
 

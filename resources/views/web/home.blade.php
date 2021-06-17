@@ -23,9 +23,9 @@
                         <div class="row">
                            <div class="col-md-8">
                               <div class="photog">
-                                 <h1>Care early<br>Coronavirus</h1>
-                                 <a class="read_more" href="javascript:void(0)">Read More</a>
-                                 <a class="read_more" href="about.html">About Us</a>
+                                 <h1>Covid<br>Tracker</h1>
+                                 <a class="read_more" href="/about">Read More</a>
+                                 <a class="read_more" href="/about">About Us</a>
                               </div>
                            </div>
                         </div>
@@ -39,9 +39,9 @@
                         <div class="row">
                            <div class="col-md-8">
                               <div class="photog">
-                                 <h1>Care early<br>Coronavirus</h1>
-                                 <a class="read_more" href="javascript:void(0)">Read More</a>
-                                 <a class="read_more" href="about.html">About Us</a>
+                                 <h1>Covid<br>Tracker</h1>
+                                 <a class="read_more" href="/about">Read More</a>
+                                 <a class="read_more" href="/about">About Us</a>
                               </div>
                            </div>
                         </div>
@@ -55,9 +55,9 @@
                         <div class="row">
                            <div class="col-md-8">
                               <div class="photog">
-                                 <h1>Care early<br>Coronavirus</h1>
-                                 <a class="read_more" href="javascript:void(0)">Read More</a>
-                                 <a class="read_more" href="about.html">About Us</a>
+                                 <h1>Covid<br>Tracker</h1>
+                                 <a class="read_more" href="/about">Read More</a>
+                                 <a class="read_more" href="/about">About Us</a>
                               </div>
                            </div>
                         </div>
@@ -129,40 +129,42 @@
 
    <!-- gejala -->
    <div class="cases">
-      <div class="container-fluid">
-         <div class="row">
-            <div class="col-md-12">
-               <div class="titlepage text_align_center ">
-                  <h2>Gejala Umum</h2>
-               </div>
-            </div>
-         </div>
-         <div class="row d_flex">
-            <div class=" col-md-4">
-               <div class="latest text_align_center">
-                  <figure><img src="web/images/gejala1.png" alt="#" /></figure>
-                  <div class="nostrud">
-                     <h3>DEMAM</h3>
-                     <p>Suhu tubuh di atas 38 derajat Celsius
-                     </p>
+      <div class="container">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage text_align_center ">
+                     <h2>Gejala Umum</h2>
                   </div>
                </div>
             </div>
-            <div class=" col-md-4">
-               <div class="latest text_align_center">
-                  <figure><img src="web/images/gejala2.png" alt="#" /></figure>
-                  <div class="nostrud">
-                     <h3>Batuk kering</h3>
-                     <p>Batuk yang disertai gatalnya tenggorokan
+            <div class="row d_flex">
+               <div class=" col-md-4">
+                  <div class="latest text_align_center">
+                     <figure><img src="web/images/gejala1.png" alt="#" /></figure>
+                     <div class="nostrud">
+                        <h3>DEMAM</h3>
+                        <p>Suhu tubuh di atas 38 derajat Celsius
+                        </p>
+                     </div>
                   </div>
                </div>
-            </div>
-            <div class=" col-md-4">
-               <div class="latest text_align_center">
-                  <figure><img src="web/images/gejala3.png" alt="#" /></figure>
-                  <div class="nostrud">
-                     <h3>Sesak Napas</h3>
-                     <p>dispnea merupakan kondisi di mana seseorang kesulitan untuk bernafas.</p>
+               <div class=" col-md-4">
+                  <div class="latest text_align_center">
+                     <figure><img src="web/images/gejala2.png" alt="#" /></figure>
+                     <div class="nostrud">
+                        <h3>Batuk kering</h3>
+                        <p>Batuk yang disertai gatalnya tenggorokan
+                     </div>
+                  </div>
+               </div>
+               <div class=" col-md-4">
+                  <div class="latest text_align_center">
+                     <figure><img src="web/images/gejala3.png" alt="#" /></figure>
+                     <div class="nostrud">
+                        <h3>Sesak Napas</h3>
+                        <p>dispnea merupakan kondisi di mana seseorang kesulitan untuk bernafas.</p>
+                     </div>
                   </div>
                </div>
             </div>
@@ -335,10 +337,10 @@
          <div class=" col-md-3">
             <div class="latest text_align_center">
                <figure><img src="{{ asset('storage/'.$item->gambar) }}" alt="#" /></figure>
-               <a class="read_more" href="https://megapolitan.kompas.com/read/2020/03/02/14272791/kronologi-2-wni-positif-corona-berawal-dari-dansa-dengan-wn-jepang?page=all">Read More</a>
+               <a class="read_more" href="{{ route('web.detail', $item->id)}}">Read More</a>
                <div class="nostrud">
-                  <h3>{{ $item->judul }}</h3>
-                  <p> {{ $item->konten}}</p>
+                  <h3><a href="{{ route('web.detail', $item->id)}}">{{ $item->judul }}</a></h3>
+                  <!-- <p>{{ $item->konten}}</p> -->
                </div>
             </div>
          </div>
